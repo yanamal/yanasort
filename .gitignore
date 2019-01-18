@@ -6,3 +6,5 @@ appengine-generated/
 .DS_Store
 
 static/yanas
+
+static/jquery.ui.touch-punch.min.js
