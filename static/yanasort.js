@@ -36,6 +36,20 @@ function show_answer() {
   });
 }
 
+function get_order() {
+  order = ''
+  $( "#sortable img" ).each(function( index, element ) {
+    order += element.getAttribute('index')+'|'
+  });
+  return order
+}
+
+function log_action(action, data) {
+  $.post("/logevent", { "order": get_order(),
+                        "action": action,
+                        "data": data})
+}
+
 $( function() {
   
   
@@ -56,6 +70,9 @@ $( function() {
       // ui.item.width(270);
       // ui.item.height(270);
       // console.log(ui.item.attr('src'))
+    },
+    stop: function(e, ui){
+      log_action('sort', ui.item.attr('index')) 
     }
   });
   $( "#sortable" ).disableSelection();
@@ -72,7 +89,8 @@ $( function() {
   
   // Check (and give feedback):
   $( "#check" ).click(function() {
-    reset_hints()
+    log_action('check', ''); 
+    reset_hints();
     num_wrong = 0
     $( "#sortable img" ).each(function( index, element ) {
       let next = element.nextSibling
@@ -91,6 +109,9 @@ $( function() {
   });
   
   
-  $( "#answer_btn" ).click(show_answer);
+  $( "#answer_btn" ).click(function() {
+    log_action('giveup', '');
+    show_answer();
+  });
   
 } );
