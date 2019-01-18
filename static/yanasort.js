@@ -54,7 +54,7 @@ $( function() {
   
   
   // sortable elements:
-  let w = ($( "#sortable" ).width())/16
+  let w = ($( "#sortable" ).width())/17
   
   // $( "#sortable" ).height(270)
   
@@ -70,9 +70,12 @@ $( function() {
       // ui.item.width(270);
       // ui.item.height(270);
       // console.log(ui.item.attr('src'))
+      
+      $( "#full_pic" ).append('<img src="yanas/'+ui.item.attr('index')+'.jpg"/>')
     },
     stop: function(e, ui){
       log_action('sort', ui.item.attr('index')) 
+      $( "#full_pic" ).empty()
     }
   });
   $( "#sortable" ).disableSelection();
