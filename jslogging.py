@@ -20,9 +20,7 @@ if not os.getenv('SERVER_SOFTWARE').startswith('Google App Engine/'):
 
 
 # This special "logging" handler will log whatever the JS side asks it to.
-# Technically not the most tamper-proof, but only using it to log JS events.
-# the reason it's in a separate handler is because all requests that go through main.py
-# themselves get logged as a user action, which is unnecessary for automated "logging" requests.
+# Technically not the most tamper-proof, but there's probably no tamper-proof way to log JS events.
 @app.route('/logevent', methods=['POST'])
 def logEvent():
     
