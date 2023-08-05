@@ -12,23 +12,24 @@
     <h3>Drag photos to sort the yanas by age!</h3>
     <p>
       The earliest photo here is from 2003; the latest is from 2018. Try to sort them youngest-to-oldest left-to-right. 
-      Click "Check" to see which pairs of neighboring photos are in the wrong order.
-      Click "Give up" to see the year and (approximate) month for each photo.
     </p>
     <p>
       <small>
-        Note: I <em>am</em> logging usage of the site (by IP) just because it seems like it will be fun data to analyze later.<br>
         <a target="_blank" href="https://github.com/yanamal/yanasort">Source</a>
       </small>
     </p>
     <div id="sortable">
     </div>
-    <div id="feedback">
+    <div id="feedback" style="position: relative;left: 5px;">
     </div>
     <div id="answer">
     </div>
+    <p>
+      Click "Check" to see which pairs of neighboring photos are in the wrong order.
+      Click "Give up" to see the year and (approximate) month for each photo.
+    </p>
     <button id="check">Check</button>
     <button id="answer_btn">Give Up</button>
-    <div id="full_pic"></div>
+    <div id="full_pic">A bigger version of the picture you are dragging will appear here. Do not be alarmed.</div>
   </body>
 <html>

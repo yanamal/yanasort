@@ -46,9 +46,7 @@ function get_order() {
 }
 
 function log_action(action, data) {
-  $.post("/logevent", { "order": get_order(),
-                        "action": action,
-                        "data": data})
+  // Nah.
 }
 
 $( function() {
@@ -71,7 +69,7 @@ $( function() {
       // ui.item.width(270);
       // ui.item.height(270);
       // console.log(ui.item.attr('src'))
-      
+      $( "#full_pic" ).empty()
       $( "#full_pic" ).append('<img src="yanas/'+ui.item.attr('index')+'.jpg"/>')
     },
     stop: function(e, ui){
@@ -84,7 +82,7 @@ $( function() {
   
   // Set up feedback & answer sections:
   for(let i=0; i<15; i++) {
-    $( "#feedback" ).append('<span align=right style="display: inline-block;color: red;font-weight: bold; width: '+w+'px "></span>')
+    $( "#feedback" ).append('<span align=right style="text-align:right;display: inline-block;color: red;-webkit-text-stroke: 4px red;font-weight: bold; width: '+w+'px "></span>')
   }
   for(let i=0; i<16; i++) {
     $( "#answer" ).append('<span style="display: inline-block; width: '+w+'px "></span>')
