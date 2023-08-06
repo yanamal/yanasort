@@ -2,8 +2,8 @@
 
 Sort the yanas! 
 
-A simple app engine app for interactive sort, with logging. Yanas not included.
+A simple JS web page for interactive sort, with a stub for logging. Yanas now included.
 
 uses this library to make jquery-ui work on mobile(also not included): http://touchpunch.furf.com/
 
-Currently hosted at http://yanasort.appspot.com/
+Currently hosted on GitHub Pages (https://yanamal.github.io/yanasort/)
